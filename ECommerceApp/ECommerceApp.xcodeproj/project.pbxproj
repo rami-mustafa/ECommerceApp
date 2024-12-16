@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				38E931C02D10C8690003D619 /* ECommerceApp */,
+				38E931C52D10C8690003D619 /* ViewController.swift */,
 				38E931D72D10C86B0003D619 /* ECommerceAppTests */,
 				38E931E12D10C86B0003D619 /* ECommerceAppUITests */,
 				38E931BF2D10C8690003D619 /* Products */,
@@ -97,12 +98,13 @@
 		38E931C02D10C8690003D619 /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
-				38E931C12D10C8690003D619 /* AppDelegate.swift */,
-				38E931C32D10C8690003D619 /* SceneDelegate.swift */,
-				38E931C52D10C8690003D619 /* ViewController.swift */,
-				38E931CA2D10C86B0003D619 /* Assets.xcassets */,
-				38E931CC2D10C86B0003D619 /* LaunchScreen.storyboard */,
-				38E931CF2D10C86B0003D619 /* Info.plist */,
+				38E931F12D10C99A0003D619 /* Application */,
+				38E932002D10CABD0003D619 /* Network */,
+				38E931FD2D10CAA60003D619 /* Data */,
+				38E931FC2D10CA8E0003D619 /* Models */,
+				38E931F72D10CA570003D619 /* Modules */,
+				38E931F32D10CA170003D619 /* Utilities */,
+				38E931F22D10C9BA0003D619 /* Resources */,
 			);
 			path = ECommerceApp;
 			sourceTree = "<group>";
@@ -122,6 +124,132 @@
 				38E931E42D10C86B0003D619 /* ECommerceAppUITestsLaunchTests.swift */,
 			);
 			path = ECommerceAppUITests;
+			sourceTree = "<group>";
+		};
+		38E931F12D10C99A0003D619 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				38E931C12D10C8690003D619 /* AppDelegate.swift */,
+				38E931C32D10C8690003D619 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		38E931F22D10C9BA0003D619 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				38E931CA2D10C86B0003D619 /* Assets.xcassets */,
+				38E931CC2D10C86B0003D619 /* LaunchScreen.storyboard */,
+				38E931CF2D10C86B0003D619 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		38E931F32D10CA170003D619 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				38E931F42D10CA1A0003D619 /* Extensions */,
+				38E931F52D10CA270003D619 /* Constants */,
+				38E931F62D10CA3D0003D619 /* Helpers */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		38E931F42D10CA1A0003D619 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38E931F52D10CA270003D619 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		38E931F62D10CA3D0003D619 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		38E931F72D10CA570003D619 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				38E931FB2D10CA7E0003D619 /* ProductList */,
+				38E931FA2D10CA780003D619 /* ProductDetail */,
+				38E931F92D10CA6D0003D619 /* Cart */,
+				38E931F82D10CA590003D619 /* Favorites */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		38E931F82D10CA590003D619 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		38E931F92D10CA6D0003D619 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		38E931FA2D10CA780003D619 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		38E931FB2D10CA7E0003D619 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		38E931FC2D10CA8E0003D619 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		38E931FD2D10CAA60003D619 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				38E931FF2D10CAB10003D619 /* CoreData */,
+				38E931FE2D10CAAA0003D619 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		38E931FE2D10CAAA0003D619 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		38E931FF2D10CAB10003D619 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		38E932002D10CABD0003D619 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,10 +560,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S274C7V2R8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ECommerceApp/Info.plist;
+				INFOPLIST_FILE = ECommerceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -464,10 +591,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S274C7V2R8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ECommerceApp/Info.plist;
+				INFOPLIST_FILE = ECommerceApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
