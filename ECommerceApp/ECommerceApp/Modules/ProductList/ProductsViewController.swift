@@ -111,7 +111,11 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let product = viewModel.item(at: indexPath.row)
+        let detailViewModel = ProductDetailViewModel(product: product)
+        let detailVC = ProductDetailViewController(viewModel: detailViewModel)
+        detailVC.modalPresentationStyle = .fullScreen
+        present(detailVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

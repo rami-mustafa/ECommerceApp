@@ -17,7 +17,6 @@ struct Product: Codable, Hashable {
     let brand: String?
     let id: String?
     var numberOfCart: Int? = 0
-    
     // Safe Accessors
     var safeName: String {
         return name ?? "Unknown Product"

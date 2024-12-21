@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		383634C72D16D9CD00728CB1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634C62D16D9CD00728CB1 /* BaseViewController.swift */; };
-		383634CA2D16E11100728CB1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 383634C92D16E11100728CB1 /* Kingfisher */; };
 		383634CD2D16E30F00728CB1 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634CC2D16E30F00728CB1 /* ProductCollectionViewCell.swift */; };
 		383634D02D16F68100728CB1 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 383634CF2D16F68100728CB1 /* Montserrat-Black.ttf */; };
 		383634D22D16F69C00728CB1 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 383634D12D16F69C00728CB1 /* Montserrat-Regular.ttf */; };
@@ -19,7 +18,10 @@
 		383634DD2D173DE600728CB1 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634DC2D173DE600728CB1 /* FilterManager.swift */; };
 		383634E02D1745FE00728CB1 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634DF2D1745FE00728CB1 /* FilterTableViewCell.swift */; };
 		383634E22D17528700728CB1 /* FilterOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634E12D17528700728CB1 /* FilterOptionButton.swift */; };
-		388197C02D14C2A800D3D3A1 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388197BF2D14C2A800D3D3A1 /* Extension+UIColor.swift */; };
+		383634E42D1763B700728CB1 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634E32D1763B700728CB1 /* ProductDetailViewModel.swift */; };
+		383634E62D17648C00728CB1 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634E52D17648C00728CB1 /* ProductDetailViewController.swift */; };
+		383634E82D17668C00728CB1 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383634E72D17668C00728CB1 /* String+Ext.swift */; };
+		388197C02D14C2A800D3D3A1 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388197BF2D14C2A800D3D3A1 /* Color+Ext.swift */; };
 		388197C32D14C56F00D3D3A1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388197C22D14C56F00D3D3A1 /* TabBarController.swift */; };
 		38A7A97D2D1359E7009B36B9 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7A97C2D1359E7009B36B9 /* ProductsViewModel.swift */; };
 		38A7A97F2D136176009B36B9 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7A97E2D136176009B36B9 /* ProductsViewController.swift */; };
@@ -71,7 +73,10 @@
 		383634DC2D173DE600728CB1 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		383634DF2D1745FE00728CB1 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		383634E12D17528700728CB1 /* FilterOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionButton.swift; sourceTree = "<group>"; };
-		388197BF2D14C2A800D3D3A1 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		383634E32D1763B700728CB1 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		383634E52D17648C00728CB1 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		383634E72D17668C00728CB1 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		388197BF2D14C2A800D3D3A1 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		388197C22D14C56F00D3D3A1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		38A7A97C2D1359E7009B36B9 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		38A7A97E2D136176009B36B9 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +108,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				383634CA2D16E11100728CB1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +268,8 @@
 		38E931F42D10CA1A0003D619 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				388197BF2D14C2A800D3D3A1 /* Extension+UIColor.swift */,
+				388197BF2D14C2A800D3D3A1 /* Color+Ext.swift */,
+				383634E72D17668C00728CB1 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +319,8 @@
 		38E931FA2D10CA780003D619 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				383634E32D1763B700728CB1 /* ProductDetailViewModel.swift */,
+				383634E52D17648C00728CB1 /* ProductDetailViewController.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -391,7 +398,6 @@
 			);
 			name = ECommerceApp;
 			packageProductDependencies = (
-				383634C92D16E11100728CB1 /* Kingfisher */,
 			);
 			productName = ECommerceApp;
 			productReference = 38E931BE2D10C8690003D619 /* ECommerceApp.app */;
@@ -466,7 +472,6 @@
 			);
 			mainGroup = 38E931B52D10C8690003D619;
 			packageReferences = (
-				383634C82D16E11100728CB1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 38E931BF2D10C8690003D619 /* Products */;
 			projectDirPath = "";
@@ -530,13 +535,16 @@
 				38A7A9812D136768009B36B9 /* NetworkError.swift in Sources */,
 				38E9320A2D10D6100003D619 /* NetworkManager.swift in Sources */,
 				383634D92D173A4700728CB1 /* FilterViewController.swift in Sources */,
-				388197C02D14C2A800D3D3A1 /* Extension+UIColor.swift in Sources */,
+				388197C02D14C2A800D3D3A1 /* Color+Ext.swift in Sources */,
 				38E932062D10D3380003D619 /* FilterModel.swift in Sources */,
 				383634E22D17528700728CB1 /* FilterOptionButton.swift in Sources */,
 				38E932042D10CFC30003D619 /* CartItem.swift in Sources */,
 				383634E02D1745FE00728CB1 /* FilterTableViewCell.swift in Sources */,
 				38E931C42D10C8690003D619 /* SceneDelegate.swift in Sources */,
+				383634E62D17648C00728CB1 /* ProductDetailViewController.swift in Sources */,
+				383634E82D17668C00728CB1 /* String+Ext.swift in Sources */,
 				383634CD2D16E30F00728CB1 /* ProductCollectionViewCell.swift in Sources */,
+				383634E42D1763B700728CB1 /* ProductDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,25 +889,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		383634C82D16E11100728CB1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.1.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		383634C92D16E11100728CB1 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 383634C82D16E11100728CB1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38E931B62D10C8690003D619 /* Project object */;
 }

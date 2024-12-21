@@ -16,7 +16,7 @@ final class FilterTableViewCell: UITableViewCell {
     private let checkboxButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "square"), for: .normal) // Initial empty checkbox
-        button.tintColor = .systemBlue
+        button.tintColor = .MainColor
         return button
     }()
     

@@ -30,7 +30,7 @@ final class ProductCollectionViewCell: UICollectionViewCell {
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Montserrat-Regular", size: 14)
-        label.textColor = .systemGreen
+        label.textColor = .MainColor
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -58,8 +58,8 @@ final class ProductCollectionViewCell: UICollectionViewCell {
         let button = UIButton(type: .system)
         button.setTitle("Add to Cart", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 16)
-        button.backgroundColor = .systemBlue
+        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 18)
+        button.backgroundColor = .MainColor
         button.layer.cornerRadius = 5
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -129,7 +129,7 @@ final class ProductCollectionViewCell: UICollectionViewCell {
 
     func configure(with product: Product) {
         nameLabel.text = product.safeName
-        priceLabel.text = product.safePrice
+        priceLabel.text = product.safePrice.tl
 
         // Reset image
         productImageView.image = nil
