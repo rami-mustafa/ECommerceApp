@@ -2,16 +2,16 @@
 //  ViewController.swift
 //  ECommerceApp
 //
-//  Created by Rami Mustafa on 16.12.24.
+//  Created by Rami Mustafa on 22.12.24.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-    }
-}
 
+    }
+
+}

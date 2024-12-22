@@ -29,13 +29,18 @@ final class ProductsViewController: BaseViewController {
         setupUI()
         viewModel.viewDidLoad()
         bindViewModel()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateCartBadge()
     }
 
     private func setupUI() {
         
         searchBar.delegate = self
         searchBar.placeholder = "Search"
+        searchBar.backgroundImage = UIImage()
         view.addSubview(searchBar)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         
@@ -47,6 +52,12 @@ final class ProductsViewController: BaseViewController {
         view.addSubview(filterButton)
         filterButton.translatesAutoresizingMaskIntoConstraints = false
 
+        filtersLabel.text = "Filters:"
+        filtersLabel.font = UIFont(name: "Montserrat-Regular", size: 20)
+        filtersLabel.textColor = .black
+        view.addSubview(filtersLabel)
+        filtersLabel.translatesAutoresizingMaskIntoConstraints = false
+
 
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -56,13 +67,18 @@ final class ProductsViewController: BaseViewController {
         NSLayoutConstraint.activate([
             
             searchBar.topAnchor.constraint(equalTo: mainContentView.topAnchor, constant: 14),
-            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 17),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -17),
             
             filterButton.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 14),
             filterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -17),
             filterButton.widthAnchor.constraint(equalToConstant: 158),
             filterButton.heightAnchor.constraint(equalToConstant: 36),
+            
+            filtersLabel.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 14),
+            filtersLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            filtersLabel.heightAnchor.constraint(equalToConstant: 36),
+
 
             collectionView.topAnchor.constraint(equalTo: filterButton.bottomAnchor, constant: 14),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -89,6 +105,15 @@ final class ProductsViewController: BaseViewController {
         filterVC.delegate = self
         present(filterVC, animated: true, completion: nil)
     }
+    
+    private func updateCartBadge() {
+        let totalItems = CartManager.shared.getCartCount()
+        if totalItems > 0 {
+            tabBarController?.tabBar.items?[1].badgeValue = "\(totalItems)"  
+        } else {
+            tabBarController?.tabBar.items?[1].badgeValue = nil
+        }
+    }
 }
 
 extension ProductsViewController: UISearchBarDelegate {
@@ -107,6 +132,16 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
         let product = viewModel.item(at: indexPath.row)  
         cell.configure(with: product)
+        
+        cell.onAddToCartButtonTapped = { [weak self] in
+            CartManager.shared.addProductToCart(product)
+            CartManager.shared.incrementCartCount() 
+            self?.updateCartBadge()
+            let alert = UIAlertController(title: "Added to Cart", message: "\(product.safeName) has been added to your cart.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self?.present(alert, animated: true, completion: nil)
+        }
+
         return cell
     }
     
@@ -139,3 +174,4 @@ extension ProductsViewController: FilterViewControllerDelegate {
         viewModel.applyFilters()
     }
 }
+ 

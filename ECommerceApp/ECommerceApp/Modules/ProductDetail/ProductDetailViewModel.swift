@@ -16,7 +16,7 @@ protocol ProductDetailViewDelegate: AnyObject {
 
 final class ProductDetailViewModel {
     weak var delegate: ProductDetailViewDelegate?
-    private let product: Product
+     let product: Product
 
     init(product: Product) {
         self.product = product
