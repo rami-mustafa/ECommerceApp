@@ -89,6 +89,7 @@ final class ProductDetailViewController: UIViewController {
         viewModel.viewDidLoad()
     }
 
+    
     private func setupUI() {
         view.backgroundColor = .white
 
@@ -104,6 +105,9 @@ final class ProductDetailViewController: UIViewController {
         headlineLabel.textAlignment = .left
         headlineLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(headlineLabel)
+
+        
+        addToCartButton.addTarget(self, action: #selector(didTapAddToCartButton), for: .touchUpInside)
 
         view.addSubview(productImageView)
         view.addSubview(titleLabel)
@@ -157,6 +161,27 @@ final class ProductDetailViewController: UIViewController {
     @objc private func didTapBackButton() {
         dismiss(animated: true, completion: nil)
     }
+    
+    private func updateCartBadge() {
+        let totalItems = CartManager.shared.getCartCount()
+        if totalItems > 0 {
+            tabBarController?.tabBar.items?[1].badgeValue = "\(totalItems)" 
+        } else {
+            tabBarController?.tabBar.items?[1].badgeValue = nil
+        }
+    }
+    
+    @objc private func didTapAddToCartButton() {
+        let product = viewModel.product
+        CartManager.shared.addProductToCart(product)
+        CartManager.shared.incrementCartCount() 
+        updateCartBadge()
+        
+        let alert = UIAlertController(title: "Added to Cart", message: "The product has been added to your cart.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+
 }
 
 extension ProductDetailViewController: ProductDetailViewDelegate {

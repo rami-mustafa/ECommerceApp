@@ -6,9 +6,12 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class ProductCollectionViewCell: UICollectionViewCell {
+    
+    
+    var onAddToCartButtonTapped: (() -> Void)?
+
     private let productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -80,6 +83,8 @@ final class ProductCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = UIColor.white
         contentView.layer.borderColor = UIColor.lightGray.cgColor
         contentView.layer.borderWidth = 0.5
+
+        addToCartButton.addTarget(self, action: #selector(didTapAddToCartButton), for: .touchUpInside)
 
         contentView.addSubview(productImageView)
         contentView.addSubview(activityIndicator)
@@ -168,6 +173,11 @@ final class ProductCollectionViewCell: UICollectionViewCell {
         let isFavorite = favoriteButton.image(for: .normal) == UIImage(named: "favorite_empty")
         let newImageName = isFavorite ? "favorite_filled" : "favorite_empty"
         favoriteButton.setImage(UIImage(named: newImageName), for: .normal)
+    }
+    
+    @objc private func didTapAddToCartButton() {
+        onAddToCartButtonTapped?() 
+        
     }
 }
 

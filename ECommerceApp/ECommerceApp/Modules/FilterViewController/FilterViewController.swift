@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum FilterType: String {
+    case sortBy = "Sort By"
+    case brand = "Brand"
+    case model = "Model"
+}
+
 protocol FilterViewControllerDelegate: AnyObject {
     func didApplyFilters(sortOption: String?, selectedBrands: [String], selectedModels: [String])
 }
@@ -258,7 +264,7 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             cell.configure(with: viewModel.model(at: indexPath.row), isChecked: false)
         }
-        
+        cell.selectionStyle = .none 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
